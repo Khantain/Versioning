@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 public class UserDAL : IUserDAL
 {
     private DBContext DbContext;
@@ -7,6 +9,6 @@ public class UserDAL : IUserDAL
     }
     public ICollection<User> GetUsers()
     {
-        return DbContext.Users.ToList();
+        return DbContext.Users.Include(u => u.Status).ToList();
     }
 }
