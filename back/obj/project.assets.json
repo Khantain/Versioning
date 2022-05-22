@@ -2750,11 +2750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\_Projets\\Versioning\\Versioning.csproj",
+      "projectUniqueName": "C:\\_Projets\\Versioning\\back\\Versioning.csproj",
       "projectName": "Versioning",
-      "projectPath": "c:\\_Projets\\Versioning\\Versioning.csproj",
+      "projectPath": "C:\\_Projets\\Versioning\\back\\Versioning.csproj",
       "packagesPath": "C:\\Users\\quent\\.nuget\\packages\\",
-      "outputPath": "c:\\_Projets\\Versioning\\obj\\",
+      "outputPath": "C:\\_Projets\\Versioning\\back\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\quent\\AppData\\Roaming\\NuGet\\NuGet.Config",
