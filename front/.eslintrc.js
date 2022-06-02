@@ -3,16 +3,19 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb-base',
+  extends: 'airbnb-typescript-base',
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    files: ['*.ts', '*.tsx'],
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: './front/tsconfig.app.json'
   },
   plugins: [
     '@typescript-eslint',
   ],
   rules: {
+    'import/prefer-default-export': 'off',
     indent: [
       'error',
       2,
@@ -20,6 +23,10 @@ module.exports = {
     quotes: [
       'error',
       'single',
+    ],
+    'linebreak-style': [
+      'error',
+      'windows',
     ],
     semi: [
       'error',
