@@ -16,22 +16,10 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export': 'off',
-    'arrow-parens': { 'requireForBlockBody': true },
-    indent: [
-      'error',
-      2,
-    ],
-    quotes: [
-      'error',
-      'single',
-    ],
-    'linebreak-style': [
-      'error',
-      'windows',
-    ],
-    semi: [
-      'error',
-      'always',
-    ],
+    'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+    indent: ['error', 2],
+    quotes: ['error', 'single'],
+    'linebreak-style': ['error', 'windows'],
+    semi: ['error', 'always'],
   },
 };

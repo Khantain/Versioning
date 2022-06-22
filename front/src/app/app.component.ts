@@ -16,7 +16,7 @@ export class AppComponent {
     this.authService
       .loginPopup()
       .pipe(
-        tap((resp) => this.authService.instance.setActiveAccount(resp.account)),
+        tap(resp => this.authService.instance.setActiveAccount(resp.account)),
         tap(() => this.setIsLoggedIn()),
       )
       .subscribe();
@@ -24,7 +24,7 @@ export class AppComponent {
 
   logout(): void {
     this.authService
-      .logout()
+      .logoutPopup()
       .pipe(tap(() => this.setIsLoggedIn()))
       .subscribe();
   }
