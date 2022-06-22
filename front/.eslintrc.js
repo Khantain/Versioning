@@ -16,6 +16,7 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export': 'off',
+    'arrow-parens': { 'requireForBlockBody': true },
     indent: [
       'error',
       2,
