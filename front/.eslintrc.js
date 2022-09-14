@@ -16,6 +16,7 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export': 'off',
+    "@typescript-eslint/unbound-method": 'off',
     'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
     indent: ['error', 2],
     quotes: ['error', 'single'],

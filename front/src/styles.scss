@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/colors';
+
+button {
+  color: $btn-color;
+  background-color: $btn-background;
+}
+
+button:hover {
+  background-color: $btn-background-hover;
+}
