@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb-typescript-base',
+  extends: [
+    "plugin:@angular-eslint/recommended",
+    // AirBnB Styleguide rules
+    "airbnb-typescript/base",
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     files: ['*.ts', '*.tsx'],
@@ -11,8 +15,10 @@ module.exports = {
     sourceType: 'module',
     project: './front/tsconfig.app.json'
   },
+  ignorePatterns: ["*.spec.ts"],
   plugins: [
-    '@typescript-eslint',
+    "import",
+    '@typescript-eslint'
   ],
   rules: {
     'import/prefer-default-export': 'off',

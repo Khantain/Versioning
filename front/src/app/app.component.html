@@ -1,2 +1,4 @@
 <button (click)="isLoggedIn ? logout() : login()">{{ isLoggedIn ? 'Déconnexion' : 'Connexion'}}</button>
-<router-outlet></router-outlet>
+<div>
+  <router-outlet class="hidden-router"></router-outlet>
+</div>

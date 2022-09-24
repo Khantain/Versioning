@@ -8,3 +8,7 @@ button {
 button:hover {
   background-color: $btn-background-hover;
 }
+
+mat-card {
+  width: fit-content;
+}
