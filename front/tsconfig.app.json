@@ -3,15 +3,19 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [
+      "jest"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@coreservices/*": [
+        "app/core/services"
+      ],
+      "@interfaces/*": [
+        "app/shared/interfaces/*"
+      ]
+    },
   },
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ],
   "exclude": [
     "*.spec.ts"
   ]

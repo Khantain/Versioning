@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MsalService } from '@azure/msal-angular';
+import { TranslateService } from '@ngx-translate/core';
 import { tap } from 'rxjs';
 
 @Component({
@@ -10,17 +11,13 @@ import { tap } from 'rxjs';
 export class AppComponent {
   isLoggedIn = false;
 
-  constructor(private authService: MsalService) {}
-
-  login(): void {
-    this.authService
-      .loginPopup()
-      .pipe(
-        tap(resp => this.authService.instance.setActiveAccount(resp.account)),
-        tap(() => this.setIsLoggedIn()),
-      )
-      .subscribe();
+  constructor(
+    private authService: MsalService,
+    translate: TranslateService,
+  ) {
+    translate.setDefaultLang('fr');
   }
+
 
   logout(): void {
     this.authService

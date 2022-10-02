@@ -5,13 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-  ],
+  declarations: [LoginComponent],
   imports: [
     CommonModule,
     LoginRoutingModule,
@@ -20,6 +19,7 @@ import { LoginComponent } from './login.component';
     MatInputModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    TranslateModule.forChild(),
   ],
 })
 export class LoginModule { }
