@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Versioning.Services.Interfaces;
 
 namespace Versioning.Controllers
 {
@@ -6,17 +7,17 @@ namespace Versioning.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly IUserDAL UserDAL;
+        private readonly IUserService UserService;
 
-        public UserController(IUserDAL UserDAL)
+        public UserController(IUserService UserService)
         {
-            this.UserDAL = UserDAL;
+            this.UserService = UserService;
         }
 
         [HttpGet(Name = "GetUsers")]
         public IEnumerable<User> Get()
         {
-            return this.UserDAL.GetUsers();
+            return this.UserService.GetUsers();
         }
     }
 }

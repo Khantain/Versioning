@@ -6,9 +6,6 @@
       <a mat-button>Contact</a>
     </div>
     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="30px">
-      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-        <span *ngFor="let country of countries" [ngClass]="'fi fi-' + country" (click)="setTranslation(country)"></span>
-      </div>
       <div mat-button>{{ 'login' | translate }}</div>
     </div>
   </div>

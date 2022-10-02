@@ -2,10 +2,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MsalGuard, MsalModule, MsalService } from '@azure/msal-angular';
-import { InteractionType, PublicClientApplication } from '@azure/msal-browser';
+import { MsalGuard, MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
+import { PublicClientApplication } from '@azure/msal-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxsModule } from '@ngxs/store';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,6 @@ export const MSALFactory = () => new PublicClientApplication({
     clientId: environment.clientId,
     redirectUri: environment.azureRedirectUri,
   },
-
 });
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,21 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     NavbarModule,
     AppRoutingModule,
-    MsalModule.forRoot(
-      MSALFactory(),
-      {
-        interactionType: InteractionType.Redirect, // MSAL Guard Configuration
-        authRequest: {
-          scopes: ['user.read'],
-        },
-      },
-      {
-        interactionType: InteractionType.Redirect, // MSAL Interceptor Configuration
-        protectedResourceMap: new Map([
-          ['https://graph.microsoft.com/v1.0/me', ['user.read']],
-        ]),
-      },
-    ),
+    MsalModule,
+    NgxsModule.forRoot([]),
     HttpClientModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
@@ -55,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [MsalService, MsalGuard],
+  providers: [{ provide: MSAL_INSTANCE, useFactory: MSALFactory }, MsalService, MsalGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
