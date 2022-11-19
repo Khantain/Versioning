@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { NavbarComponent } from './navbar.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { NavbarComponent } from './navbar.component';
 
 @NgModule({
   declarations: [NavbarComponent],
