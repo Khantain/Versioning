@@ -1,12 +1,11 @@
 <mat-toolbar color="primary">
-  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="flex-line">
     <div>
-      <a mat-button>Home</a>
-      <a mat-button>About</a>
-      <a mat-button>Contact</a>
+      <a mat-raised-button>Home</a>
+      <a mat-raised-button>About</a>
+      <a mat-raised-button>Contact</a>
     </div>
-    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="30px">
-      <div mat-button>{{ 'login' | translate }}</div>
-    </div>
+
+    <a mat-raised-button>{{ 'login' | translate }}</a>
   </div>
 </mat-toolbar>
